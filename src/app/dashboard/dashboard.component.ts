@@ -7,27 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  Designation: string;
-  Username: string;
-  NoOfTeamMembers: number;
-  TotalCostOfAllProjects: number;
-  PendingTasks: number;
-  UpComingProjects: number;
-  ProjectCost: number;
-  CurrentExpenditure: number;
-  AvailableFunds: number;
+  Designation: string ="";
+  Username: string ="";
+  NoOfTeamMembers: number =0;
+  TotalCostOfAllProjects: number =0;
+  PendingTasks: number =0;
+  UpComingProjects: number =0;
+  ProjectCost: number =0;
+  CurrentExpenditure: number =0;
+  AvailableFunds: number =0;
 
-  constructor() {
-    this.Designation= "";
-    this.Username = "";
-    this.NoOfTeamMembers =0;
-    this.TotalCostOfAllProjects =0
-    this.PendingTasks =0;
-    this.UpComingProjects = 0;
-    this.ProjectCost = 0;
-    this.CurrentExpenditure =0;
-    this.AvailableFunds =0;
-  }
+  Clients: string[] = [];
+  Projects: string[] = [];
+  Years: number[] = [];
+  TeamMembersSummary: any =[];
+  TeamMembers: any = [];
 
   ngOnInit() {
     this.Designation= "Team Leader";
