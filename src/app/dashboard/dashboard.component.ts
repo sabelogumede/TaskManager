@@ -56,34 +56,34 @@ export class DashboardComponent implements OnInit {
       {
         Region:"East", Members: [
           {ID: 1, Name: "Sabelo", Status: "Available"},
-          {ID: 1, Name: "Gogo", Status: "Available"},
-          {ID: 1, Name: "Sipho", Status: "Busy"},
-          {ID: 1, Name: "Thabile", Status: "Busy"}
+          {ID: 2, Name: "Gogo", Status: "Available"},
+          {ID: 3, Name: "Sipho", Status: "Busy"},
+          {ID: 4, Name: "Thabile", Status: "Busy"}
         ]
       },
       {
         Region:"West", Members: [
-          {ID: 1, Name: "Jabu", Status: "Available"},
-          {ID: 1, Name: "Thami", Status: "Busy"},
-          {ID: 1, Name: "Vincent", Status: "Available"},
-          {ID: 1, Name: "Mala", Status: "Busy"}
+          {ID: 5, Name: "Jabu", Status: "Available"},
+          {ID: 6, Name: "Thami", Status: "Busy"},
+          {ID: 7, Name: "Vincent", Status: "Available"},
+          {ID: 8, Name: "Mala", Status: "Busy"}
         ]
       },
       {
         Region:"South", Members: [
 
-          {ID: 1, Name: "Nhlanhla", Status: "Busy"},
-          {ID: 1, Name: "Sphelele", Status: "Available"},
-          {ID: 1, Name: "Busi", Status: "Busy"},
-          {ID: 1, Name: "Sizwe", Status: "Available"}
+          {ID: 9, Name: "Nhlanhla", Status: "Busy"},
+          {ID: 10, Name: "Sphelele", Status: "Available"},
+          {ID: 11, Name: "Busi", Status: "Busy"},
+          {ID: 12, Name: "Sizwe", Status: "Available"}
         ]
       },
       {
         Region:"North", Members: [
-          {ID: 1, Name: "Nomsa", Status: "Busy"},
-          {ID: 1, Name: "Sphiwe", Status: "Busy"},
-          {ID: 1, Name: "Hlelo", Status: "Available"},
-          {ID: 1, Name: "Vusi", Status: "Available"}
+          {ID: 13, Name: "Nomsa", Status: "Busy"},
+          {ID: 14, Name: "Sphiwe", Status: "Busy"},
+          {ID: 15, Name: "Hlelo", Status: "Available"},
+          {ID: 16, Name: "Vusi", Status: "Available"}
         ]
       }
     ]

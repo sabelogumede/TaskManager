@@ -122,31 +122,49 @@
         <div class="accordion" id="accordionExample">
           <!-- Cards -->
           <div class="card" *ngFor="let teamMembersGroup of TeamMembers; let i = index">
-            <div class="card-header bg-secondary" id="card1">
-              <h2 class="mb-0">
-                <button class="btn btn-link text-white" type="button" data-toggle="collapse" [attr.data-target]="'#cardbody' + i">{{teamMembersGroup.Region}}</button>
-              </h2>
-            </div>
-            <div [id]="'cardbody' + i" class="collapse" aria-labelledby="card1" data-parent="#accordionExample" [ngClass]="(i == 0)?'show':''">
-              <div class="card-body">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Name</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let member of teamMembersGroup.Members">
-                      <td>{{member.ID}}</td>
-                      <td [style.color]="(member.Status=='Busy')?'red':'black'">{{member.Name}}</td>
-                      <td><i class="fa fa-phone"></i> {{member.Status}}</td>
-                    </tr>
-                  </tbody>
-                </table>
+
+              <div class="card-header bg-secondary" id="card1">
+                <h2 class="mb-0">
+                  <button class="btn btn-link text-white" type="button" data-toggle="collapse" [attr.data-target]="'#cardbody' + i">{{teamMembersGroup.Region}}</button>
+                </h2>
               </div>
-            </div>
+              <div [id]="'cardbody' + i" class="collapse" aria-labelledby="card1" data-parent="#accordionExample" [ngClass]="(i == 0)?'show':''">
+                <div class="card-body">
+                  <!-- templates -->
+                  <div *ngIf="i == 0; then firstTemplate; else secondTemplate">
+
+                  </div>
+                  <!-- first template -->
+                  <ng-template #firstTemplate>
+                    <div class="card" *ngFor="let teamMember of teamMembersGroup.Members">
+                      <div class="card-header bg-primary text-white">#{{teamMember.ID}} {{teamMember.Name}}</div>
+                      <div class="card-body" [style.color]="(teamMember.Status=='Busy')?'red':'black'"><i class="fa fa-phone"></i> {{teamMember.Status}}</div>
+                    </div>
+                  </ng-template>
+                  <!-- Second template -->
+                  <ng-template #secondTemplate>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let member of teamMembersGroup.Members">
+                          <td>{{member.ID}}</td>
+                          <td [style.color]="(member.Status=='Busy')?'red':'black'">{{member.Name}}</td>
+                          <td><i class="fa fa-phone"></i> {{member.Status}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </ng-template>
+
+                </div>
+              </div>
+
+
           </div>
         </div>
       </div>
