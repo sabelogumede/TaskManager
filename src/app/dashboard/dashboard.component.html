@@ -57,7 +57,7 @@
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">Project A</button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#" *ngFor="let project of Projects">{{project}}</a>
+                <a class="dropdown-item" href="#" *ngFor="let project of Projects" onclick="return false" (click)="onProjectChange($event)">{{project}}</a>
               </div>
             </div>
           </div>
@@ -113,21 +113,21 @@
 
     </div>
   </div>
-  <!-- Wright Column Twree -->
+  <!-- right Column Twree -->
   <div class="col-lg-3" style="background-color: #e9e6e6;">
     <div class="row">
       <!-- TEAM MEMBERS -->
       <div class="col-11 mx-auto mt-1 text-center pt-1 pd-2 rounded font-weight-bold" style="background-color: #718d97; font-family: 'Arial Narrow'">TEAM MEMBERS</div>
       <div class="col-lg-12 pt-2">
         <div class="accordion" id="accordionExample">
-          <!-- Card 1 -->
+          <!-- Cards -->
           <div class="card" *ngFor="let teamMembersGroup of TeamMembers; let i = index">
             <div class="card-header bg-secondary" id="card1">
               <h2 class="mb-0">
                 <button class="btn btn-link text-white" type="button" data-toggle="collapse" [attr.data-target]="'#cardbody' + i">{{teamMembersGroup.Region}}</button>
               </h2>
             </div>
-            <div [id]="'cardbody' + i" class="collapse" aria-labelledby="card1" data-parent="#accordionExample">
+            <div [id]="'cardbody' + i" class="collapse" aria-labelledby="card1" data-parent="#accordionExample" [ngClass]="(i == 0)?'show':''">
               <div class="card-body">
                 <table class="table">
                   <thead>
@@ -140,7 +140,7 @@
                   <tbody>
                     <tr *ngFor="let member of teamMembersGroup.Members">
                       <td>{{member.ID}}</td>
-                      <td>{{member.Name}}</td>
+                      <td [style.color]="(member.Status=='Busy')?'red':'black'">{{member.Name}}</td>
                       <td><i class="fa fa-phone"></i> {{member.Status}}</td>
                     </tr>
                   </tbody>
